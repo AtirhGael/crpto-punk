@@ -1,19 +1,22 @@
 import { StyleSheet, Text, View,Image } from 'react-native'
 import React from 'react'
-import Send, { Buy, Recieve, Swap } from '../components/Transactions'
 import { useRoute } from '@react-navigation/native'
 import { AntDesign,FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 
 
 
 const CoinDetails = () => {
+  const navigation = useNavigation()
   const route = useRoute()
   return (
     <View style={styles.container}>
      <View style={styles.top1} >
         <View style={styles.left}>
-        <AntDesign name="arrowleft" size={24} color="#fff" />
+        <AntDesign name="arrowleft" size={24} color="#fff" 
+        onPress={() => navigation.goBack()}
+        />
           <Text style={{color:'#fff',fontSize:20,}}>{ route.params.name }</Text>
         </View>
         <View style={styles.right}>
@@ -42,10 +45,10 @@ const CoinDetails = () => {
       <Text style={{color:'#fff',fontSize:16,}}> {route.params.name}</Text>
      </View>
      <View style={styles.transactions} >
-      <Send/>
-      <Recieve/>
-      <Swap/>
-      <Buy/>
+      {route.params.send}
+      {route.params.recieve}
+      {route.params.buy}
+      {route.params.stake}
      </View>
     </View>
   )
@@ -92,9 +95,8 @@ const styles = StyleSheet.create({
   transactions:{
     display:'flex',
     flexDirection:'row',
-    justifyContent:'space-between',
-    marginRight:20,
-    marginLeft:20,
+    justifyContent:'center',
+    gap:25,
     paddingTop:30,
   }
 })

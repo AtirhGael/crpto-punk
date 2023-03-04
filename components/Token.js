@@ -3,14 +3,19 @@ import React from 'react'
 import { FlatList } from 'native-base'
 import {data} from './data'
 import { useNavigation } from '@react-navigation/native';
+import { ScrollView } from 'react-native';
 
 
 const Token = () => {
     const navigation = useNavigation()
   
   return (
+    
     <FlatList
     data={data}
+    showsVerticalScrollIndicator={false}
+    horizontal={false}
+    showsHorizontalScrollIndicator={false}
     renderItem={({item})=>(
         <TouchableOpacity
         onPress={() => navigation.navigate('coinDetails',item)}

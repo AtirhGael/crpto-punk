@@ -1,4 +1,4 @@
-import { View, Text,StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native'
+import { View, Text,StyleSheet, TouchableOpacity, SafeAreaView, ScrollView } from 'react-native'
 import React,{useState} from 'react'
 import { Feather,AntDesign } from '@expo/vector-icons';
 import Send, { Buy, Recieve, Swap } from '../components/Transactions';
@@ -25,6 +25,7 @@ const Wallet = () => {
                 <Swap/>
             </View>
         </View>
+       <ScrollView>
        <SafeAreaView>
        <View style={styles.buttom}>
             <View style={styles.row}>
@@ -44,6 +45,7 @@ const Wallet = () => {
 
         </View>
        </SafeAreaView>
+       </ScrollView>
       
     </View>
   )

@@ -23,7 +23,7 @@ export const Recieve = () => {
         <View style={styles.icon}>
         <AntDesign name="arrowdown" size={30} color="black"  />
         </View>
-      <Text style={styles.Text}>Send</Text>
+      <Text style={styles.Text}>Recieve</Text>
     </View>
  </TouchableOpacity>
     )
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
        height:50,
        width:50,
        borderRadius:25,
-       backgroundColor:'blue',
+       backgroundColor:'#9BC1F2',
        alignItems:'center',
        justifyContent:'center'
     },

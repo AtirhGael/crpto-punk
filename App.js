@@ -7,6 +7,7 @@ import Tabs from './tabs/Tabs';
 import { NativeBaseProvider } from 'native-base';
 import CoinDetails from './Screens/CoinDetails';
 import Wallet from './Screens/Wallet';
+import MoreCoins from './Screens/MoreCoins';
 
 
 
@@ -29,6 +30,7 @@ function App() {
         <Stack.Screen name="Home" component={Tabs} />
         <Stack.Screen name="coinDetails" component={CoinDetails} />
         <Stack.Screen name="wallet" component={Wallet} />
+        <Stack.Screen name="morecoins" component={MoreCoins} />
       </Stack.Navigator>
     </NavigationContainer>
     </NativeBaseProvider>
